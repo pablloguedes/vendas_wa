@@ -1,6 +1,3 @@
-/* Importa uma fonte profissional do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
 /* Define variáveis de cor para facilitar a customização */
 :root {
     --background-start: #0f172a; /* Azul noite */
@@ -12,7 +9,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    /* FONTE CORRIGIDA para usar a nativa do sistema (Apple, etc.) */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-primary);
     background: linear-gradient(45deg, var(--background-start), var(--background-end));
     background-attachment: fixed;
