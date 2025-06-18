@@ -7,49 +7,81 @@
     --background-end: #1e293b;   /* Azul ardósia */
     --text-primary: #e2e8f0;     /* Quase branco */
     --text-highlight: #38bdf8;   /* Azul elétrico */
+    --card-background: #1e293b;
     --shadow-color: rgba(56, 189, 248, 0.4);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-primary);
-    
-    /* Gradiente de fundo suave */
     background: linear-gradient(45deg, var(--background-start), var(--background-end));
-    background-attachment: fixed; /* Mantém o gradiente fixo no scroll */
-
-    /* Centralização profissional com Flexbox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-attachment: fixed;
     margin: 0;
-    text-align: center;
-    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+    padding: 0 2rem; /* Adiciona um respiro nas laterais */
 }
 
 main {
-    /* Animação de entrada */
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza o conteúdo principal */
+}
+
+/* Seção Hero (Olá Mundo) continua centralizada na tela */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh; /* Ocupa 80% da altura da tela */
     animation: fadeIn 1.5s ease-in-out;
 }
 
-h1 {
-    font-size: 4rem; /* Tamanho maior para impacto */
+.hero h1 {
+    font-size: 4rem;
     font-weight: 700;
     color: var(--text-highlight);
-    text-shadow: 0 0 15px var(--shadow-color); /* Efeito de brilho (glow) */
+    text-shadow: 0 0 15px var(--shadow-color);
     margin: 0;
     transition: transform 0.3s ease;
 }
 
-h1:hover {
-    transform: scale(1.05); /* Efeito de zoom sutil no hover */
+.hero h1:hover {
+    transform: scale(1.05);
 }
 
-p {
+.hero p {
     font-size: 1.3rem;
     margin-top: 1rem;
-    max-width: 600px;
+}
+
+/* Nova seção de Produtos */
+.products {
+    padding: 4rem 0; /* Espaçamento acima e abaixo da lista */
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-highlight);
+    margin-bottom: 2rem;
+}
+
+.products ul {
+    list-style: none;
+    padding: 0;
+}
+
+.products li {
+    background-color: var(--card-background);
+    border-left: 4px solid var(--text-highlight);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.products li:hover {
+    background-color: #334155; /* Um pouco mais claro no hover */
 }
 
 /* Keyframes para a animação de entrada */
@@ -64,12 +96,21 @@ p {
     }
 }
 
-/* Ajuste para telas menores */
+/* Ajustes para telas menores */
 @media (max-width: 600px) {
-    h1 {
+    body {
+        padding: 0 1rem;
+    }
+    .hero {
+        height: 60vh;
+    }
+    .hero h1 {
         font-size: 2.5rem;
     }
-    p {
+    .hero p {
         font-size: 1rem;
+    }
+    .products h2 {
+        font-size: 2rem;
     }
 }
