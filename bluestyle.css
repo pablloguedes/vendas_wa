@@ -1,0 +1,75 @@
+/* Importa uma fonte profissional do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Define variáveis de cor para facilitar a customização */
+:root {
+    --background-start: #0f172a; /* Azul noite */
+    --background-end: #1e293b;   /* Azul ardósia */
+    --text-primary: #e2e8f0;     /* Quase branco */
+    --text-highlight: #38bdf8;   /* Azul elétrico */
+    --shadow-color: rgba(56, 189, 248, 0.4);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    
+    /* Gradiente de fundo suave */
+    background: linear-gradient(45deg, var(--background-start), var(--background-end));
+    background-attachment: fixed; /* Mantém o gradiente fixo no scroll */
+
+    /* Centralização profissional com Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+main {
+    /* Animação de entrada */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    font-size: 4rem; /* Tamanho maior para impacto */
+    font-weight: 700;
+    color: var(--text-highlight);
+    text-shadow: 0 0 15px var(--shadow-color); /* Efeito de brilho (glow) */
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05); /* Efeito de zoom sutil no hover */
+}
+
+p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+/* Keyframes para a animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
